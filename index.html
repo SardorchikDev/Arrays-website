@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Vibes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="hero">
+      <nav class="topbar">
+        <span class="brand">Array Vibes</span>
+        <a href="#playground" class="nav-link">Try It Live</a>
+      </nav>
+
+      <div class="hero-copy">
+        <p class="eyebrow">JavaScript Arrays</p>
+        <h1>Learn array methods with code, visuals, and clean little experiments.</h1>
+        <p class="hero-text">
+          This page turns basic array operations into something more readable,
+          interactive, and less boring than plain notes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#methods" class="button primary">Explore Methods</a>
+          <a href="#string-lab" class="button secondary">Split and Join</a>
+        </div>
+      </div>
+
+      <section class="hero-panel">
+        <div class="panel-tag">starter array</div>
+        <pre><code>let array = [1, 2, 3];</code></pre>
+        <div class="array-visual" id="heroArray"></div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="methods">
+        <div class="section-heading">
+          <p class="eyebrow">Core Methods</p>
+          <h2>What each array method does</h2>
+        </div>
+        <div class="card-grid" id="methodCards"></div>
+      </section>
+
+      <section class="section split-layout" id="playground">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive Playground</p>
+          <h2>Watch the array change in real time</h2>
+          <p>
+            Use the buttons below to simulate `push`, `pop`, `unshift`, and
+            `shift` on the same array.
+          </p>
+        </div>
+
+        <div class="playground-card">
+          <div class="panel-top">
+            <span class="panel-tag">live state</span>
+            <button class="reset-button" id="resetArray">Reset</button>
+          </div>
+
+          <div class="array-visual large" id="liveArray"></div>
+
+          <div class="control-row">
+            <button data-action="push">push(4)</button>
+            <button data-action="pop">pop()</button>
+            <button data-action="unshift">unshift(1)</button>
+            <button data-action="shift">shift()</button>
+          </div>
+
+          <div class="console-box">
+            <p class="console-label">Console vibe</p>
+            <pre id="arrayLog"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section info-grid">
+        <article class="info-card">
+          <p class="eyebrow">Quick Access</p>
+          <h3>Length, first, last</h3>
+          <pre><code>array.length
+array[0]
+array[array.length - 1]</code></pre>
+          <div class="mini-results">
+            <div>
+              <span>Length</span>
+              <strong id="lengthValue"></strong>
+            </div>
+            <div>
+              <span>First</span>
+              <strong id="firstValue"></strong>
+            </div>
+            <div>
+              <span>Last</span>
+              <strong id="lastValue"></strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <p class="eyebrow">Nested Arrays</p>
+          <h3>Arrays inside arrays</h3>
+          <pre><code>let sumth = [[1, 2], [2, 3], [3, 4]];
+
+sumth[0]     // [1, 2]
+sumth[2][0]  // 3</code></pre>
+          <div class="nested-grid" id="nestedVisual"></div>
+        </article>
+
+        <article class="info-card">
+          <p class="eyebrow">Dynamic Arrays</p>
+          <h3>Arrays can change</h3>
+          <pre><code>let arr = [10, 20];
+arr.push(69);
+arr[0] = 96;
+
+// [96, 20, 69]</code></pre>
+          <p class="info-text">
+            You can add, remove, or replace items whenever needed. Arrays are
+            mutable, so they are built for changing state.
+          </p>
+        </article>
+      </section>
+
+      <section class="section string-lab" id="string-lab">
+        <div class="section-heading">
+          <p class="eyebrow">String and Array</p>
+          <h2>`split()` and `join()` in one place</h2>
+        </div>
+
+        <div class="lab-grid">
+          <article class="lab-card">
+            <div class="panel-tag">split</div>
+            <h3>Turn a string into an array</h3>
+            <label for="splitInput">String</label>
+            <input id="splitInput" type="text" value="b,e,g,i" />
+            <label for="splitSeparator">Separator</label>
+            <input id="splitSeparator" type="text" value="," maxlength="3" />
+            <button id="runSplit">Run split()</button>
+            <pre id="splitOutput"></pre>
+          </article>
+
+          <article class="lab-card">
+            <div class="panel-tag">join</div>
+            <h3>Turn an array into a string</h3>
+            <label for="joinInput">Array items</label>
+            <input id="joinInput" type="text" value="amogus,sus,array" />
+            <label for="joinSeparator">Separator</label>
+            <input id="joinSeparator" type="text" value=" , " maxlength="5" />
+            <button id="runJoin">Run join()</button>
+            <pre id="joinOutput"></pre>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built with plain HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
